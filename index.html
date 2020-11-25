@@ -4,6 +4,28 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script scr="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+  <script>
+    alert("You need to find the correct answer!");
+    var loop = function () {
+      var answer = prompt("Which programming programming paradigm is better? Imperative or declarative?", "it depends");
+      return answer;
+    }
+
+    var answer = loop();
+    var wrongAnswers = 0;
+    while (answer != "it depends") {
+      wrongAnswers += 1;
+      if (wrongAnswers <= 3) {
+        alert("Hmmmm. That's not quite correct. Try again!")
+      }
+
+      if (wrongAnswers > 3) {
+        alert("A bit of help. It ... ?")
+      }
+
+      answer = loop();
+    }
+  </script>
   <style>
     h1 {
       font-family: "Helvetica Neue";
@@ -117,16 +139,70 @@
     }
 
     .buttons-con .action-link-wrap a {
-      background: #68c950;
-      padding: 8px 25px;
-      border-radius: 4px;
-      color: #FFF;
-      font-weight: bold;
-      font-size: 14px;
-      transition: all 0.3s linear;
       cursor: pointer;
       text-decoration: none;
-      margin-right: 10px
+      outline: 0;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #4A6D8B;
+      color: #fff;
+      border: 0;
+      cursor: pointer;
+      height: 50px;
+      width: 200px;
+      box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .button {
+      outline: 0;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #4A6D8B;
+      color: #fff;
+      border: 0;
+      cursor: pointer;
+      height: 50px;
+      width: 200px;
+      box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      border-color: darken(#4A6D8B, 7%);
+    }
+
+    .btn-contract {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-left: 75px;
+      margin-right: 75px;
+      color: transparent;
+      font-size: 9px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .btn-contract:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: darken(#4A6D8B, 7%);
+      height: 100%;
+      width: 0%;
+      animation: expand100 2s normal backwards;
+    }
+
+    @keyframes expand100 {
+      0% {
+        width: 0%;
+      }
+
+      100% {
+        width: 100%;
+      }
     }
 
     #pane {
@@ -645,11 +721,11 @@ c-0.2-0.3-0.2-0.5,0-0.6s0.4,0,0.8,0.4c0.5,0.6,1.9,2.1,3.4,4.1c0.8,1.1,0.9,1.3,0.
       </div>
 
       <div class="message-box column">
-        <h1>Για τη γιορτή σου</h1>
-        <p>Απο το βαβυ σου!</p>
+        <h1 style="margin-top: 0; margin-bottom: 4px;">Για τη γιορτή σου</h1>
+        <p style="font-size: 20px;">Όσα αγαπά και ζητά η καρδούλα σου μάτια μου!</p>
         <div class="buttons-con">
           <div class="action-link-wrap">
-            <a href="./katiana_gitft_voucher.pdf" class="link-button">CLICK ME</a>
+            <a href="./katiana_gitft_voucher.pdf">CLICK ME</a>
           </div>
           <div>
             <audio style="position: absolute; bottom: 0; right: 0" controls autoplay>
